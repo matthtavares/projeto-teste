@@ -7,14 +7,29 @@ use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
 {
+    /**
+     * The users list view.
+     *
+     * @return View
+     */
     public function index() {
         return view('usuarios.listar');
     }
 
+    /**
+     * The form to create user.
+     *
+     * @return View
+     */
     public function cadastrar() {
         return view('usuarios.cadastrar');
     }
 
+    /**
+     * The form to update user.
+     *
+     * @return View
+     */
     public function editar( $id ) {
         return view('usuarios.editar', ['user' => Usuario::find($id)]);
     }
